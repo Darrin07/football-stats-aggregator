@@ -1,6 +1,6 @@
 # football-stats-aggregator
 
-# Football Stats Tracker is a Python-based web application that aggregates 
+# Football Stats Aggregator is a Python-based web application that aggregates 
 # and displays real-time and historical football statistics. The platform 
 # allows users to view and compare player and team performance, track game 
 # results, and analyze key stats using an interactive dashboard. Built with 
