@@ -1,0 +1,138 @@
+/* CSS for Detailed Team Stats Page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.page-title {
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 10px;
+}
+
+.navbar .navbar-nav .nav-link {
+    font-weight: bold;
+    color: #333;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+    color: #007bff;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding-top: 20px;
+}
+
+.back-button {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.back-button a {
+    text-decoration: none;
+    color: #007bff;
+    background-color: #e6e6e6;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.back-button a:hover {
+    background-color: #d4d4d4;
+}
+
+.team-card {
+    background-color: #d9534f;
+    color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    max-width: 300px;
+}
+
+.team-logo {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.team-info {
+    margin-top: 15px;
+    font-size: 1.25rem;
+}
+
+.stats-dropdown {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.stats-dropdown select {
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.team-stats-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.team-stats-table th, .team-stats-table td {
+    padding: 12px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+.team-stats-table th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+    color: #333;
+}
+
+.team-stats-table td {
+    font-size: 0.95rem;
+}
+
+.stats-category {
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #f5f5f5;
+}
+
+/* Flexbox to arrange team card and stats */
+.stats-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.team-card-wrapper {
+    flex: 1;
+}
+
+.stats-table-wrapper {
+    flex: 2;
+}

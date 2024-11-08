@@ -1,0 +1,9 @@
+# Ignore .env files
+.env
+
+# Ignore compiled Python files
+*.pyc
+
+# Ignore local settings or config
+config.py
+config.py
