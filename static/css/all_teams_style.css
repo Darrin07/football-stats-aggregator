@@ -1,0 +1,75 @@
+/* All Teams Page CSS */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.conference-logo {
+    width: 100px; /* Set appropriate size for conference logo */
+    height: auto;
+}
+
+.team-logo {
+    width: 80px;  /* Set appropriate size for team logo */
+    height: auto;
+    object-fit: contain;
+}
+
+
+.conference-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.conference-divider {
+    width: 80%;
+    border-top: 3px solid #003366; /* AFC Divider Color */
+    margin: 10px auto;
+}
+
+.nfc-divider {
+    border-top: 3px solid #990000; /* NFC Divider Color */
+}
+
+.team-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+}
+
+
+.team-name {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.team-record {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.details-button {
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.details-button:hover {
+    background-color: #dcdcdc;
+    text-decoration: none;
+}

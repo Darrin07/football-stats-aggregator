@@ -7,3 +7,14 @@
 # microservice architecture, the project integrates external sports data 
 # APIs to provide up-to-date information, making it a useful tool for 
 # football enthusiasts, analysts, and fantasy football players.
+
+
+
+
+import requests
+
+url = "http://recommendation-service.netflix.com/recommend"
+payload = {"user_id": 1234, "preferences": ["comedy", "action"]}
+response = requests.post(url, json=payload)
+
+print(response.json())

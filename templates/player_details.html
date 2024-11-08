@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detailed Player Stats</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/player_details_style.css') }}">
+</head>
+
+<body>
+    <div class="container mt-3">
+        <div class="d-flex justify-content-between align-items-center">
+            <a href="/players" class="btn btn-light back-button">Back to All Players Page</a>
+            <h1 class="page-title">Detailed Player Stats</h1>
+            <div class="dropdown stats-dropdown">
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Stats by Year
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    {% for season in offense_stats %}
+                    <a class="dropdown-item" href="#" onclick="showSeason('{{ season['year'] }}')">{{ season['year'] }} Season</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% if player %}
+    <div id="stats-container" class="row mt-5">
+        <!-- Player Card Section -->
+        <div class="col-md-3">
+            <div class="player-card text-center p-3">
+                <img src="{{ url_for('static', filename='images/player_image.jpg') }}" alt="Player Image" class="img-fluid rounded-circle mb-3">
+                <h5>{{ player['name'] }}</h5>
+                <h6>{{ player['team']['market'] }} {{ player['team']['name'] }}</h6>
+                <span class="badge badge-danger">{{ player['position'] }}</span>
+            </div>
+        </div>
+
+        <!-- Player Stats Table Section -->
+        <div class="col-md-9">
+            <div class="card p-4">
+                {% for season in offense_stats %}
+                <div class="season-stats" id="season-{{ season['year'] }}">
+                    <h3>{{ season['year'] }} Season - {{ season['team_name'] }}</h3>
+                    <div class="table-responsive mt-3">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Games Played</th>
+                                    <th>Receiving Yards</th>
+                                    <th>Receptions</th>
+                                    <th>Receiving Touchdowns</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{ season['games_played'] }}</td>
+                                    <td>{{ season['receiving_yards'] }}</td>
+                                    <td>{{ season['receptions'] }}</td>
+                                    <td>{{ season['receiving_touchdowns'] }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Function to show stats for the selected season and hide others
+        function showSeason(year) {
+            // Hide all season stats
+            document.querySelectorAll('.season-stats').forEach(function (statDiv) {
+                statDiv.style.display = 'none';
+            });
+
+            // Show the selected season stats
+            const selectedSeason = document.getElementById(`season-${year}`);
+            if (selectedSeason) {
+                selectedSeason.style.display = 'block';
+            }
+        }
+
+        // Initially hide all season stats except the first one
+        document.addEventListener('DOMContentLoaded', function () {
+            const allSeasons = document.querySelectorAll('.season-stats');
+            if (allSeasons.length > 0) {
+                allSeasons.forEach((season, index) => {
+                    season.style.display = index === 0 ? 'block' : 'none';
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

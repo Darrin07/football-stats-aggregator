@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/search_style.css') }}">
+</head>
+<body>
+    <!-- Page Title and Navigation Bar -->
+    <div class="container text-center">
+        <h1 class="page-title">Search Page</h1>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <div class="collapse navbar-collapse justify-content-center">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/teams">Teams</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/players">Players</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/search">Search</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Search Section -->
+    <div class="container search-section mt-5">
+        <div class="row">
+            <!-- Player Search Form -->
+            <div class="col-md-6 d-flex flex-column align-items-center">
+                <h4 class="text-muted mb-3">Player Search</h4>
+                <form action="/search" method="POST" class="text-center w-75">
+                    <input type="text" name="player_name" class="form-control mt-2" placeholder="Type player name and hit search">
+                    <button type="submit" name="search_type" value="player" class="btn btn-player-search mt-3">Player Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Picture Section -->
+    <div class="container mt-5 text-center">
+        <img src="{{ url_for('static', filename='images/nfl_pic4.jpg') }}" alt="Football Field" class="img-fluid rounded image-bottom">
+    </div>
+</body>
+</html>

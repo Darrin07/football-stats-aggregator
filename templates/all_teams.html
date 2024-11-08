@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Teams Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/all_teams_style.css') }}">
+</head>
+
+<body>
+    <!-- Page Title and Navigation Bar -->
+    <div class="container mt-4">
+        <h1 class="page-title text-center">All Teams Page</h1>
+
+        <!-- Dropdown to Filter by Conference -->
+        <div class="d-flex justify-content-center mt-3">
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Filter drop down menu
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#afc-teams">AFC Teams</a>
+                <a class="dropdown-item" href="#nfc-teams">NFC Teams</a>
+            </div>
+        </div>
+
+        <!-- AFC Teams Section -->
+        <div id="afc-teams" class="mt-5">
+            <div class="text-center">
+                <img src="{{ url_for('static', filename='images/afc_logo.jpg') }}" alt="AFC Logo" class="conference-logo">
+                <h2 class="conference-title">AFC Teams</h2>
+                <hr class="conference-divider">
+            </div>
+            <div class="row">
+                {% for team in afc_teams %}
+                <div class="col-md-4 mb-4 d-flex justify-content-center">
+                    <div class="team-card p-3 text-center">
+                        <img src="{{ url_for('static', filename='images/' + team.logo) }}" alt="{{ team.name }}" class="team-logo mb-3">
+                        <h4 class="team-name">{{ team.name }}</h4>
+                        <p class="team-record">{{ team.record }}</p>
+                        <a href="{{ url_for('team_details', team_id=team.id) }}" class="btn btn-light details-button">Click for more details</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- NFC Teams Section -->
+        <div id="nfc-teams" class="mt-5">
+            <div class="text-center">
+                <img src="{{ url_for('static', filename='images/nfc_logo.jpg') }}" alt="NFC Logo" class="conference-logo">
+                <h2 class="conference-title">NFC Teams</h2>
+                <hr class="conference-divider nfc-divider">
+            </div>
+            <div class="row">
+                {% for team in nfc_teams %}
+                <div class="col-md-4 mb-4 d-flex justify-content-center">
+                    <div class="team-card p-3 text-center">
+                        <img src="{{ url_for('static', filename='images/' + team.logo) }}" alt="{{ team.name }}" class="team-logo mb-3">
+                        <h4 class="team-name">{{ team.name }}</h4>
+                        <p class="team-record">{{ team.record }}</p>
+                        <a href="{{ url_for('team_details', team_id=team.id) }}" class="btn btn-light details-button">Click for more details</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

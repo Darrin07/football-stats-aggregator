@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFL Stats Tracker</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Page Title and Navigation Bar -->
+    <div class="container text-center">
+        <h1 class="page-title">NFL Stats Tracker</h1>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <div class="collapse navbar-collapse justify-content-center">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/teams">Teams</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/players">Players</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/search">Search</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Welcome Section -->
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Left: Welcome Box -->
+            <div class="col-md-6 d-flex flex-column justify-content-center align-items-start">
+                <div class="welcome-section">
+                    <h1>Welcome</h1>
+                    <p>Welcome to the NFL Stats Aggregator. Here you can get comprehensive stats on NFL teams and their players.</p>
+                    <div class="mt-4">
+                        <a href="/search" class="btn btn-primary btn-custom mr-2">SEARCH</a>
+                        <div class="button-description">Search for players and teams.</div>
+                        <a href="/about" class="btn btn-danger btn-custom mt-3">ABOUT</a>
+                        <div class="button-description">Learn more about the app's features and purpose.</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Right: NFL Image -->
+            <div class="col-md-6 d-flex justify-content-center align-items-center">
+                <img src="{{ url_for('static', filename='images/nfl_background.jpg') }}" alt="NFL pic" class="img-fluid rounded shadow-lg">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
