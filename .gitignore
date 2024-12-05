@@ -1,3 +1,4 @@
 # Ignore local settings or config
-config.py
+.env
+
 

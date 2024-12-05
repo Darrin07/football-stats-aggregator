@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Search</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/search_style.css') }}">
+</head>
+<body>
+    <!-- Page Title and Navigation Bar -->
+    <div class="container text-center">
+        <h1 class="page-title">Player Search</h1>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/teams">Teams</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/players">Players</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/player-search">Player Search</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Search Section -->
+    <div class="container search-section mt-5">
+        <div class="row">
+            <!-- Player Search Form -->
+            <div class="col-md-6 d-flex flex-column align-items-center">
+                <h4 class="text-muted mb-3">Player Search</h4>
+                <form action="/player-search" method="POST" class="text-center w-75">
+                    <input type="text" name="player_name" class="form-control mt-2" placeholder="Type player name and hit search">
+                    <button type="submit" name="search_type" value="player" class="btn btn-player-search mt-3">Player Search</button>
+                </form>
+            </div>
+        </div> <!-- Added this closing div to properly close the row -->
+    </div> <!-- Added this closing div to properly close the container -->
+
+    <!-- Picture Section -->
+    <div class="container mt-5 text-center">
+        <img src="{{ url_for('static', filename='images/nfl_pic4.jpg') }}" alt="Football Field" class="img-fluid rounded image-bottom">
+    </div>
+</body>
+</html>

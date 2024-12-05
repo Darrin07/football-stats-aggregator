@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
+
 <body>
     <!-- Page Title and Navigation Bar -->
     <div class="container text-center">
@@ -19,7 +21,11 @@
                     <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="/teams">Teams</a></li>
                     <li class="nav-item"><a class="nav-link" href="/players">Players</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/search">Search</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/team-search">Team Search</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/player-search">Player Search</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/recent-games">Recent Games</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/team-rankings">Team Rankings</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/favorite-teams">Favorite Teams</a></li>
                     <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
                 </ul>
             </div>
@@ -35,9 +41,11 @@
                     <h1>Welcome</h1>
                     <p>Welcome to the NFL Stats Aggregator. Here you can get comprehensive stats on NFL teams and their players.</p>
                     <div class="mt-4">
-                        <a href="/search" class="btn btn-primary btn-custom mr-2">SEARCH</a>
-                        <div class="button-description">Search for players and teams.</div>
-                        <a href="/about" class="btn btn-danger btn-custom mt-3">ABOUT</a>
+                        <!-- Team Search and Player Search Buttons -->
+                        <a href="/team-search" class="btn btn-primary btn-custom mr-2">Team Search</a>
+                        <a href="/player-search" class="btn btn-primary btn-custom ml-2">Player Search</a>
+                        <div class="button-description mt-3">Search for teams or players with the buttons above.</div>
+                        <a href="/about" class="btn btn-danger btn-custom mt-4">ABOUT</a>
                         <div class="button-description">Learn more about the app's features and purpose.</div>
                     </div>
                 </div>
@@ -49,4 +57,5 @@
         </div>
     </div>
 </body>
+
 </html>

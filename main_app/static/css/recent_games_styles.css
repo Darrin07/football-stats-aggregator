@@ -1,0 +1,81 @@
+/* public/css/recent_games_style.css */
+
+body {
+    background-color: #f8f9fa; /* Light grey background */
+    color: #333; /* Default text color */
+    font-family: Arial, sans-serif;
+}
+
+.page-title {
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.8);
+    margin-top: 10px;
+    padding: 10px 0;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #fff !important; /* White text for the navigation links */
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    background-color: #0056b3 !important; /* Navy blue background when hovering */
+    color: #ffffff !important;
+    border-radius: 5px;
+}
+
+.recent-games-section {
+    margin-top: 50px;
+    padding-bottom: 50px;
+}
+
+.section-title {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.games-list {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.game-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 15px;
+    transition: transform 0.3s;
+}
+
+.game-item:hover {
+    transform: scale(1.02);
+}
+
+.team-info {
+    text-align: center;
+}
+
+.vs-text {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #f8f9fa; /* Light grey background for the footer area */
+    margin-top: 50px;
+}

@@ -1,0 +1,27 @@
+body {
+    background-color: #f8f9fa; /* Light grey background */
+    color: #333; /* Default text color */
+}
+
+.page-title {
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.list-group {
+    max-width: 600px;
+    margin: 0 auto;
+    list-style: none;
+    padding-left: 0;
+}
+
+.list-group-item {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+}

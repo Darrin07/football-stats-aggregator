@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recent Games</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/recent_games_style.css') }}">
+</head>
+
+<body>
+    <!-- Page Title and Navigation Bar -->
+    <div class="container text-center">
+        <h1 class="page-title">Recent Games</h1>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/teams">Teams</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/players">Players</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/search">Search</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/recent-games">Recent Games</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/team-rankings">Team Rankings</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/favorite-teams">Favorite Teams</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Recent Games Section -->
+    <div class="container recent-games-section mt-5">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="section-title">Latest NFL Games</h3>
+                <div class="games-list">
+                    <!-- Placeholder for recent games - these will be dynamically filled -->
+                    {% for game in recent_games %}
+                    <div class="game-item">
+                        <div class="row align-items-center">
+                            <div class="col-md-5 team-info">
+                                <h5>{{ game.home_team }}</h5>
+                                <p>Score: {{ game.home_score }}</p>
+                            </div>
+                            <div class="col-md-2 text-center">
+                                <p class="vs-text">VS</p>
+                            </div>
+                            <div class="col-md-5 team-info">
+                                <h5>{{ game.away_team }}</h5>
+                                <p>Score: {{ game.away_score }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer mt-5">
+        <p>&copy; 2024 NFL Stats Tracker. All rights reserved.</p>
+    </div>
+
+</body>
+
+</html>

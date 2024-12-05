@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Teams</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/favorite_teams_style.css') }}">
+</head>
+<body>
+    <!-- Page Title and Navigation Bar -->
+    <div class="container text-center">
+        <h1 class="page-title">Favorite Teams</h1>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <div class="collapse navbar-collapse justify-content-center">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/teams">Teams</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/players">Players</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/team-search">Team Search</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/player-search">Player Search</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/team-rankings">Team Rankings</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/recent-games">Recent Games</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/favorite-teams">Favorite Teams</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Favorite Teams List -->
+    <div class="container mt-5">
+        <h4 class="text-center">Your Favorite Teams</h4>
+        <ul class="list-group mt-3">
+            {% for team in favorite_teams %}
+                <li class="list-group-item">{{ team }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

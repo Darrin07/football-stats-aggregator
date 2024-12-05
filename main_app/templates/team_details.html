@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ team.name }} - Detailed Team Stats</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/team_stats_style.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-4">
+        <!-- Back Button -->
+        <div class="back-button-wrapper">
+            <a href="/team-search" class="btn btn-light back-button">Back to Team Search Page</a>
+        </div>
+
+        <!-- Page Title and Navigation Bar -->
+        <h1 class="page-title text-center">{{ team.name }} - Detailed Team Stats</h1>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <div class="collapse navbar-collapse justify-content-center">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/teams">Teams</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/players">Players</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/team-search">Team Search</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/player-search">Player Search</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Team Card Section -->
+        <div class="row mt-5">
+            <div class="col-md-3">
+                <div class="team-card text-center">
+                    <img src="{{ url_for('static', filename='images/' + team.id + '_logo.jpg') }}" alt="Team Logo" class="img-fluid team-logo mb-3">
+                    <h5 class="team-name">{{ team.name }}</h5>
+                </div>
+            </div>
+
+            <!-- Team Stats Table Section -->
+            <div class="col-md-9">
+                <div class="card p-4">
+                    <h4 class="stats-title">Team Statistics</h4>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>{{ team.name }}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Wins</td>
+                                    <td>{{ team.wins }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Losses</td>
+                                    <td>{{ team.losses }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Ties</td>
+                                    <td>{{ team.ties }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Passing Yards</td>
+                                    <td>{{ team.passing_yards }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Rushing Yards</td>
+                                    <td>{{ team.rushing_yards }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Receiving Yards</td>
+                                    <td>{{ team.receiving_yards }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Total Touchdowns</td>
+                                    <td>{{ team.total_touchdowns }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Passing Touchdowns</td>
+                                    <td>{{ team.passing_touchdowns }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Rushing Touchdowns</td>
+                                    <td>{{ team.rushing_touchdowns }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Receiving Touchdowns</td>
+                                    <td>{{ team.receiving_touchdowns }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Sacks</td>
+                                    <td>{{ team.sacks }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Interceptions</td>
+                                    <td>{{ team.interceptions }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Forced Fumbles</td>
+                                    <td>{{ team.forced_fumbles }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Field Goals Made</td>
+                                    <td>{{ team.field_goals_made }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Kickoff Returns</td>
+                                    <td>{{ team.kickoff_returns }}</td>
+                                </tr>
+                                <!-- Add more stats as needed -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add to Favorites Button -->
+        <div class="row mt-4">
+            <div class="col text-center">
+                <form action="/add-favorite-team" method="POST">
+                    <input type="hidden" name="team_name" value="{{ team.name }}">
+                    <button type="submit" class="btn btn-primary">Add to Favorites</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

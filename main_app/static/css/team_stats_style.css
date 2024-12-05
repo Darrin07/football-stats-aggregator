@@ -1,0 +1,131 @@
+/* General page styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.page-title {
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Back button styles */
+.back-button-wrapper {
+    margin-bottom: 20px;
+}
+
+.back-button {
+    font-size: 0.9rem;
+}
+
+/* Navigation bar styles */
+.navbar {
+    margin-bottom: 40px;
+}
+
+.navbar-nav .nav-item .nav-link {
+    font-weight: 500;
+    padding: 10px;
+    color: #333;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #007bff;
+}
+
+/* Dropdown styles */
+.dropdown {
+    margin-bottom: 20px;
+}
+
+/* Team card section styles */
+.team-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.team-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.team-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.team-info {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Stats table styles */
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.stats-title {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.table thead th {
+    font-weight: bold;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table tbody td {
+    padding: 12px;
+    vertical-align: middle;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .team-card {
+        margin-bottom: 20px;
+    }
+
+    .dropdown {
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .page-title {
+        font-size: 1.5rem;
+    }
+
+    .team-logo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .stats-title {
+        font-size: 1.3rem;
+    }
+}
